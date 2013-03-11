@@ -69,7 +69,7 @@
 
                 echo $row['content'];
               }
-			  ?></textarea> <br>
+              ?></textarea> <br>
             <input type = "hidden" name = "edit" value = <?php if(isset($_GET['edit'])) echo "\"" . $_GET['edit'] . "\""; else echo "\"false\""; ?> >
             <input type = "button" value = "Save Entry" onclick = "submitForm();">
             <input type = "reset" value = "Reset Form">
