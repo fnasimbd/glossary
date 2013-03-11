@@ -15,11 +15,11 @@
         <td width = "25%"></td>
       </tr>
 
-	  <tr>
-	    <td width = "25%"></td>
+      <tr>
+        <td width = "25%"></td>
 
-		<td bgcolor = "#D6D6C2">
-	      <?php
+        <td bgcolor = "#D6D6C2">
+          <?php
             # establishes database connection
             #
             $con = mysql_connect("localhost", $_POST['db_user'], $_POST['db_pass']);
@@ -37,7 +37,7 @@
             }
             else{
               echo "<p class = \"content\"><b>Could not create table.</b></p>";
-	          exit;
+              exit;
             }
 
             $file_names = array('gl-add-new-entry.php', 'gl-save-entry.php', 'gl-del-entry.php', 'gl-view-entries.php');
@@ -50,17 +50,17 @@
               $file_content = preg_replace('/db_user/', $_POST['db_user'], $file_content);
               $file_content = preg_replace('/db_pass/', $_POST['db_pass'], $file_content);
               file_put_contents($file_name, $file_content);
-		
-		      echo "<p class = \"content\"><b>Updated file:</b> <i>" . $file_name . "</i></p>";
+
+              echo "<p class = \"content\"><b>Updated file:</b> <i>" . $file_name . "</i></p>";
             }
 	  
-	        echo "<p class = \"content-header\"><b>You are done!</b></p>";
-	        echo "<p class = \"content-header\">Continue to <a href = \"index.php\">Home</a></p>";
+            echo "<p class = \"content-header\"><b>You are done!</b></p>";
+            echo "<p class = \"content-header\">Continue to <a href = \"index.php\">Home</a></p>";
           ?>
-	    </td>
-	  
-	    <td width = "25%"></td>
-	  </tr>
-	</table>
+        </td>
+
+        <td width = "25%"></td>
+      </tr>
+    </table>
   </body>
 </html>
