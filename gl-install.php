@@ -61,12 +61,12 @@
           </form>
         </td>
 		
-		<td width = "25%"></td>
+        <td width = "25%"></td>
       </tr>
 	  
-	  <tr>
-	    <td colspan = "3" height = "50"></td>
-	  </tr>
+      <tr>
+        <td colspan = "3" height = "50"></td>
+      </tr>
     </table>
   <body>
 </html>
