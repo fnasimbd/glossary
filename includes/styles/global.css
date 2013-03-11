@@ -1,0 +1,91 @@
+body, ol, ul, p, input{
+  font-family: PT Serif, serif;
+  font-size: 17;
+}
+
+/* headings */
+
+h1{
+  font-size: 50;
+}
+
+h2{
+  font-size: 40;
+}
+
+/* paragrahs */
+
+p.header{
+  font-size: 50;
+}
+
+p.content-header{
+  font-size: 21;
+  color: #800000;
+}
+
+p.content{
+  font-size: 20;
+}
+
+/* hyperlinks*/
+
+a:link{
+  font-size: 17;
+  text-decoration: none;
+  color: #474719;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+a.active{
+}
+
+a:visited{
+  color: #474719;
+}
+
+a.small:link{
+  font-family: Arial, sans-serif;
+  font-size: 13;
+  //font-weight: bold;
+  color: #474719;
+}
+
+a.small:hover{
+  text-decoration: underline;
+}
+
+/* prewritten text and code blocks*/
+
+pre, code{
+    font-family: Consolas, mono-space;
+	font-size: 13;
+}
+
+blockquote
+{
+  font-style: italic;
+}
+
+input{
+  font-size: 15;
+  //background: automatic;//#D6D6C2;
+}
+
+textarea{
+  font-family: Consolas, mono-space;
+  font-size: 13;
+  background: #D6D6C2;
+}
+
+hr{
+  border: 0;
+  border-bottom: 1px dashed #000000;
+  //width: 50%;
+  //color: #800000;
+  //background-color: #800000;
+  //height: 10px;
+}
