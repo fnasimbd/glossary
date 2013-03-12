@@ -20,7 +20,7 @@
             <p class = "content-header">
               <b>Database name</b><br>
               <input type = "text" name = "db_name" size = "30"><br>
-              <font style = "font-size: 17;color: #000000"><i>Make sure there exists a MySQL database with this name. Create one if there is none. GM uses this database to store all of your information.</i></font>
+              <font style = "font-size: 17;color: #000000"><i>Create a database for GM. GM stores all  all of your information here.</i></font>
             </p>
 
             <p class = "content-header">
@@ -44,14 +44,20 @@
 			
             <p class = "content-header">
               <b>GM user name</b><br>
-              <input type = "text" name = "gl_user"><br>
+              <input type = "text" name = "user_name" size = "30"><br>
               <font style = "font-size: 17;color: #000000"><i>Enter the user name for Glossary Manager.</i></font>
             </p>
 
             <p class = "content-header">
               <b>GM password</b><br>
-              <input type = "password" name = "gl_pass"><br>
+              <input type = "password" name = "user_pass" size = "30"><br>
               <font style = "font-size: 17;color: #000000"><i>Enter the password for Glossary Manager (at least 6 characters).</i></font>
+            </p>
+			
+            <p class = "content-header">
+              <b>Your e-mail address</b><br>
+              <input type = "text" name = "user_mail" size = "30"><br>
+              <font style = "font-size: 17;color: #000000"><i>Enter your e-mail address.</i></font>
             </p>
 
             <p>
