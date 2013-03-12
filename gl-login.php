@@ -37,8 +37,8 @@
             </p>
           </form>
         </td>
-		
-		<td width = "40%"></td>
+
+        <td width = "40%"></td>
       </tr>
     </table>
   <body>
