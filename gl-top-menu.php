@@ -1,0 +1,1 @@
+<table width ="990" align = "center" cellpadding = "10">  <tr align = "right">    <td align = "right">      <p align = "right">	    <?php		  if(isset($_SESSION['id'])){		    echo "<a href = \"gl-logout.php\">Logout</a>";		  }		  else{		    echo "<a href = \"gl-login.php\">Login</a>";		  }		?>      </p>    </td>  </tr></table>
