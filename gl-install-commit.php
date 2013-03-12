@@ -62,7 +62,7 @@
 
             perform_query($query, "entries table");
 
-            $file_names = array('gl-add-new-entry.php', 'gl-save-entry.php', 'gl-del-entry.php', 'gl-view-entries.php');
+            $file_names = array('gl-add-new-entry.php', 'gl-save-entry.php', 'gl-del-entry.php', 'gl-view-entries.php', 'gl-login-validate.php');
 
             # updates database constants in all files
             #

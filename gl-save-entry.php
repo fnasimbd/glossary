@@ -1,9 +1,9 @@
 <?php
   # defines the database connection constants
   #
-  define("DB_NAME", "db_name");
-  define("DB_USER", "db_user");
-  define("DB_PASS", "db_pass");
+  define("DB_NAME", "test");
+  define("DB_USER", "root");
+  define("DB_PASS", "");
 
   # establishes database connection
   #
@@ -20,10 +20,10 @@
   # otherwise $query is an INSERT
   #
   if($_POST['edit'] == "true"){
-    $query = "UPDATE glossary_entries SET content = '" . $_POST["content"] . "' WHERE title = '" . $_POST["title"] . "'";
+    $query = "UPDATE gl_entries SET content = '" . $_POST["content"] . "' WHERE title = '" . $_POST["title"] . "'";
   }
   else{
-    $query = "INSERT INTO glossary_entries (`title`, `content`) VALUES('" . $_POST["title"] . "', '" . $_POST["content"] . "')";
+    $query = "INSERT INTO gl_entries (`title`, `content`) VALUES('" . $_POST["title"] . "', '" . $_POST["content"] . "')";
   }
 
   # performs $query to database
