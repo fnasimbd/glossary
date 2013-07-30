@@ -1,6 +1,8 @@
 <html>
   <head>
     <link rel = "stylesheet" type = "text/css" href = "includes/styles/global.css">
+    <script src = "includes/js/jquery-1.7.2.js"></script>
+    <script src = "includes/js/ShowDown.js"></script>
 
     <script type = "text/javascript">
       function submitForm(){
@@ -27,6 +29,16 @@
       }
     </script>
 
+    <script>
+      $(document).ready(function(){
+        $('#content').on('keyup', function(){
+          var text = $(this).val();
+          var converter = new Showdown.converter();
+          $('#preview').html(converter.makeHtml(text));
+        })
+      })
+    </script>
+
     <title>Add new glossary entry</title>
   </head>
 
@@ -42,34 +54,37 @@
 
           <form id = "entry" name = "entry" action = "gl-save-entry.php" method = "post">
             <p class = "content">Title <input type = "text" id = "title" name = "title" size = "57" value = "<?php if(isset($_GET['edit']) && isset($_GET['entry']) && $_GET['edit'] == true ) echo $_GET['entry']; ?>" style = "background: #D6D6C2;"></p>
-            <textarea name = "content" rows = "15" cols = "72"><?php
-              if(isset($_GET['edit']) && isset($_GET['entry']) && $_GET['edit'] == true){
+            <textarea id = "content" name = "content" rows = "15" cols = "72">
+              <?php
+                if(isset($_GET['edit']) && isset($_GET['entry']) && $_GET['edit'] == true){
 
-                # defines the database connection constants
-                #
-                define("DB_NAME", "db_name");
-                define("DB_USER", "db_user");
-                define("DB_PASS", "db_pass");
+                  # defines the database connection constants
+                  #
+                  define("DB_NAME", "db_name");
+                  define("DB_USER", "db_user");
+                  define("DB_PASS", "db_pass");
 
-                # establishes database connection
-                #
-                $con = mysql_connect("localhost", DB_USER, DB_PASS);
+                  # establishes database connection
+                  #
+                  $con = mysql_connect("localhost", DB_USER, DB_PASS);
 
-                if(!$con){
-                  die ('Could not connect' . mysql_error());
+                  if(!$con){
+                    die ('Could not connect' . mysql_error());
+                  }
+
+                  mysql_select_db(DB_NAME, $con);
+
+                  # fetches the 'content' of $_GET['entry']
+                  #
+                  $query = "SELECT content FROM glossary_entries WHERE title = '" . $_GET['entry']. "'";
+                  $result = mysql_query($query) or die (mysql_error());
+                  $row = mysql_fetch_array($result);
+
+                  echo $row['content'];
                 }
-
-                mysql_select_db(DB_NAME, $con);
-
-                # fetches the 'content' of $_GET['entry']
-                #
-                $query = "SELECT content FROM gl_entries WHERE title = '" . $_GET['entry']. "'";
-                $result = mysql_query($query) or die (mysql_error());
-                $row = mysql_fetch_array($result);
-
-                echo $row['content'];
-              }
-              ?></textarea> <br>
+              ?></textarea> <br/>
+            <p id = "preview">
+            </p>
             <input type = "hidden" name = "edit" value = <?php if(isset($_GET['edit'])) echo "\"" . $_GET['edit'] . "\""; else echo "\"false\""; ?> >
             <input type = "button" value = "Save Entry" onclick = "submitForm();">
             <input type = "reset" value = "Reset Form">
