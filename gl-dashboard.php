@@ -33,6 +33,7 @@
         <td width = "20%"></td>
 
         <td>
+          <p class = "content-header" align = "center">Dashboard</p>
         </td>
 
         <td width = "20%"></td>

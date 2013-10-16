@@ -60,9 +60,9 @@
 
                   # defines the database connection constants
                   #
-                  define("DB_NAME", "db_name");
-                  define("DB_USER", "db_user");
-                  define("DB_PASS", "db_pass");
+                  define("DB_NAME", "test");
+                  define("DB_USER", "root");
+                  define("DB_PASS", "");
 
                   # establishes database connection
                   #
